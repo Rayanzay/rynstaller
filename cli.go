@@ -47,10 +47,9 @@ func main() {
 
 	var helpFlag = flag.Bool("help", false, "View usage instructions")
 	var versionFlag = flag.Bool("version", false, "View the program version")
-	var updateSelfFlag = flag.Bool("update-self", false, "Update me to the latest version")
-	var installFlag = flag.Bool("install", false, "Install Equicord")
-	var updateFlag = flag.Bool("repair", false, "Repair Equicord")
-	var uninstallFlag = flag.Bool("uninstall", false, "Uninstall Equicord")
+	var updateSelfFlag = flag.Bool("update-self", false, "Update me to the latest version")	var installFlag = flag.Bool("install", false, "Install Ryncord")
+	var updateFlag = flag.Bool("repair", false, "Repair Ryncord")
+	var uninstallFlag = flag.Bool("uninstall", false, "Uninstall Ryncord")
 	var installOpenAsarFlag = flag.Bool("install-openasar", false, "Install OpenAsar")
 	var uninstallOpenAsarFlag = flag.Bool("uninstall-openasar", false, "Uninstall OpenAsar")
 	var locationFlag = flag.String("location", "", "The location of the Discord install to modify")
@@ -146,8 +145,7 @@ func main() {
 		errSilent = PromptDiscord("patch", *locationFlag, *branchFlag).patch()
 	} else if uninstall {
 		errSilent = PromptDiscord("unpatch", *locationFlag, *branchFlag).unpatch()
-	} else if update {
-		Log.Info("Downloading latest Equicord files...")
+	} else if update {		Log.Info("Downloading latest Ryncord files...")
 		err := installLatestBuilds()
 		Log.Info("Done!")
 		if err == nil {

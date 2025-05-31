@@ -11,10 +11,10 @@ import (
 	"image/color"
 )
 
-const ReleaseUrl = "https://api.github.com/repos/Equicord/Equicord/releases/latest"
-const InstallerReleaseUrl = "https://api.github.com/repos/Equicord/Equilotl/releases/latest"
+const ReleaseUrl = "https://api.github.com/repos/Rayanzay/ryncord/releases/latest"
+const InstallerReleaseUrl = "https://api.github.com/repos/Rayanzay/rynstaller/releases/latest"
 
-var UserAgent = "Equilotl/" + buildinfo.InstallerGitHash + " (https://github.com/Equicord/Equilotl)"
+var UserAgent = "Rynstaller/" + buildinfo.InstallerGitHash + " (https://github.com/Rayanzay/rynstaller)"
 
 var (
 	DiscordGreen  = color.RGBA{R: 0x2D, G: 0x7C, B: 0x46, A: 0xFF}

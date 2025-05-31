@@ -1,21 +1,21 @@
-# Equilotl
+# Rynstaller
 
-The Equicord Installer allows you to install [Equicord, the cutest Discord Desktop client mod](https://github.com/Equicord/Equicord)
+The Ryncord Installer allows you to install [Ryncord, the cutest Discord Desktop client mod](https://github.com/Rayanzay/ryncord)
 
 ![image](https://i.imgur.com/oHN41ss.png)
 
 ## Usage
 
 Windows
-- [GUI](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl.exe) 
-- [CLI](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli.exe)
+- [GUI](https://github.com/Rayanzay/rynstaller/releases/latest/download/Rynstaller.exe) 
+- [CLI](https://github.com/Rayanzay/rynstaller/releases/latest/download/RynstallerCli.exe)
 
 MacOS
-- [GUI](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl.MacOS.zip)
+- [GUI](https://github.com/Rayanzay/rynstaller/releases/latest/download/Rynstaller.MacOS.zip)
 
 Linux 
-- [GUI](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl-x11)
-- [CLI](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-Linux)
+- [GUI](https://github.com/Rayanzay/rynstaller/releases/latest/download/Rynstaller-x11)
+- [CLI](https://github.com/Rayanzay/rynstaller/releases/latest/download/RynstallerCli-Linux)
 ## Building from source
 
 ### Prerequisites 
@@ -71,4 +71,4 @@ go build --tags cli
 ```
 
 You might want to pass some flags to this command to get a better build.
-See [the GitHub workflow](https://github.com/Equicord/Equilotl/blob/main/.github/workflows/release.yml) for what flags I pass or if you want more precise instructions
+See [the GitHub workflow](https://github.com/Rayanzay/rynstaller/blob/main/.github/workflows/release.yml) for what flags I pass or if you want more precise instructions

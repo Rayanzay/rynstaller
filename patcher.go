@@ -18,20 +18,19 @@ import (
 
 var BaseDir string
 var BaseDirErr error
-var EquicordDirectory string
+var RyncordDirectory string
 
-func init() {
-	if dir := os.Getenv("EQUICORD_USER_DATA_DIR"); dir != "" {
-		Log.Debug("Using EQUICORD_USER_DATA_DIR")
+func init() {	if dir := os.Getenv("RYNCORD_USER_DATA_DIR"); dir != "" {
+		Log.Debug("Using RYNCORD_USER_DATA_DIR")
 		BaseDir = dir
 	} else if dir = os.Getenv("DISCORD_USER_DATA_DIR"); dir != "" {
-		Log.Debug("Using DISCORD_USER_DATA_DIR/../EquicordData")
-		BaseDir = path.Join(dir, "..", "EquicordData")
+		Log.Debug("Using DISCORD_USER_DATA_DIR/../RyncordData")
+		BaseDir = path.Join(dir, "..", "RyncordData")
 	} else {
 		Log.Debug("Using UserConfig")
-		BaseDir = appdir.New("Equicord").UserConfig()
+		BaseDir = appdir.New("Ryncord").UserConfig()
 	}
-	dir := os.Getenv("EQUICORD_DIRECTORY")
+	dir := os.Getenv("RYNCORD_DIRECTORY")
 	if dir == "" {
 		if !ExistsFile(BaseDir) {
 			BaseDirErr = os.Mkdir(BaseDir, 0755)
@@ -44,9 +43,8 @@ func init() {
 	}
 	if dir != "" {
 		Log.Debug("Using EQUICORD_DIRECTORY")
-		EquicordDirectory = dir
-	} else {
-		EquicordDirectory = path.Join(BaseDir, "equicord.asar")
+		EquicordDirectory = dir	} else {
+		EquicordDirectory = path.Join(BaseDir, "ryncord.asar")
 	}
 }
 
@@ -97,9 +95,8 @@ func patchAppAsar(dir string, isSystemElectron bool) (err error) {
 		}
 		renamesDone = append(renamesDone, []string{from, to})
 	}
-
 	Log.Debug("Writing custom app.asar to", appAsar)
-	if err := WriteAppAsar(appAsar, EquicordDirectory); err != nil {
+	if err := WriteAppAsar(appAsar, RyncordDirectory); err != nil {
 		return err
 	}
 

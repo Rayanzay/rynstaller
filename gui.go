@@ -80,7 +80,7 @@ func main() {
 		os.Setenv("GDK_DPI_SCALE", "1")
 	}
 
-	win = g.NewMasterWindow("Equilotl", 1200, 800, linuxFlags)
+	win = g.NewMasterWindow("Rynstaller", 1200, 800, linuxFlags)
 
 	icon, _, err := image.Decode(bytes.NewReader(iconBytes))
 	if err != nil {
@@ -435,7 +435,7 @@ func renderInstaller() g.Widget {
 		g.Style().SetFontSize(20).To(
 			renderErrorCard(
 				DiscordYellow,
-				"**Github** is the only official place to get Equicord. Any other site claiming to be us is malicious.\n"+
+				"**Github** is the only official place to get Ryncord. Any other site claiming to be us is malicious.\n"+
 					"If you downloaded from any other source, you should delete / uninstall everything immediately, run a malware scan and change your Discord password.",
 				90,
 			),
@@ -638,7 +638,7 @@ func loop() {
 			g.Dummy(0, 20),
 			g.Style().SetFontSize(20).To(
 				g.Row(
-					g.Label(Ternary(IsDevInstall, "Dev Install: ", "Equicord will be downloaded to: ")+EquicordDirectory),
+					g.Label(Ternary(IsDevInstall, "Dev Install: ", "Ryncord will be downloaded to: ")+RyncordDirectory),
 					g.Style().
 						SetColor(g.StyleColorButton, DiscordBlue).
 						SetStyle(g.StyleVarFramePadding, 4, 4).
