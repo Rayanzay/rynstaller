@@ -66,7 +66,8 @@ func GetGithubRelease(url string) (*GithubRelease, error) {
 
 func InitGithubDownloader() {
 	GithubDoneChan = make(chan bool, 1)
-	IsDevInstall = os.Getenv("RYNCORD_DEV_INSTALL") == "1"
+
+	IsDevInstall = os.Getenv("EQUICORD_DEV_INSTALL") == "1"
 	Log.Debug("Is Dev Install: ", IsDevInstall)
 	if IsDevInstall {
 		GithubDoneChan <- true
@@ -93,16 +94,17 @@ func InitGithubDownloader() {
 		Log.Debug("Latest hash is", LatestHash, "Local Install is", Ternary(LatestHash == InstalledHash, "up to date!", "outdated!"))
 	}()
 
-	// either .asar file or directory with main.js file (in DEV)	RyncordFile := RyncordDirectory
+	// either .asar file or directory with main.js file (in DEV)
+	EquicordFile := EquicordDirectory
 
-	stat, err := os.Stat(RyncordFile)
+	stat, err := os.Stat(EquicordFile)
 	if err != nil {
 		return
 	}
 
 	// dev
 	if stat.IsDir() {
-		RyncordFile = path.Join(RyncordFile, "main.js")
+		EquicordFile = path.Join(EquicordFile, "main.js")
 	}
 
 	// Check hash of installed version if exists
@@ -110,9 +112,10 @@ func InitGithubDownloader() {
 	if err != nil {
 		return
 	}
-	Log.Debug("Found existing Ryncord Install. Checking for hash...")
 
-	re := regexp.MustCompile(`// Ryncord (\w+)`)
+	Log.Debug("Found existing Vencord Install. Checking for hash...")
+
+	re := regexp.MustCompile(`// Equicord (\w+)`)
 	match := re.FindSubmatch(b)
 	if match != nil {
 		InstalledHash = string(match[1])
@@ -156,9 +159,10 @@ func installLatestBuilds() (retErr error) {
 		Log.Error("Failed to download desktop.asar:", err)
 		retErr = err
 		return
-	}	out, err := os.OpenFile(RyncordDirectory, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644)
+	}
+	out, err := os.OpenFile(EquicordDirectory, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644)
 	if err != nil {
-		Log.Error("Failed to create", RyncordDirectory+":", err)
+		Log.Error("Failed to create", EquicordDirectory+":", err)
 		retErr = err
 		return
 	}
