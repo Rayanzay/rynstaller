@@ -158,13 +158,13 @@ func installLatestBuilds() (retErr error) {
 		retErr = err
 		return
 	}
-
 	out, err := os.OpenFile(RyncordDirectory, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644)
 	if err != nil {
 		Log.Error("Failed to create", RyncordDirectory+":", err)
 		retErr = err
 		return
 	}
+	defer out.Close()
 
 	read, err := io.Copy(out, res.Body)
 	if err != nil {
