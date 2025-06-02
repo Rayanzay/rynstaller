@@ -44,10 +44,10 @@ func main() {
 
 	// Used by log.go init func
 	flag.Bool("debug", false, "Enable debug info")
-
 	var helpFlag = flag.Bool("help", false, "View usage instructions")
 	var versionFlag = flag.Bool("version", false, "View the program version")
-	var updateSelfFlag = flag.Bool("update-self", false, "Update me to the latest version")	var installFlag = flag.Bool("install", false, "Install Ryncord")
+	var updateSelfFlag = flag.Bool("update-self", false, "Update me to the latest version")
+	var installFlag = flag.Bool("install", false, "Install Ryncord")
 	var updateFlag = flag.Bool("repair", false, "Repair Ryncord")
 	var uninstallFlag = flag.Bool("uninstall", false, "Uninstall Ryncord")
 	var installOpenAsarFlag = flag.Bool("install-openasar", false, "Install OpenAsar")
