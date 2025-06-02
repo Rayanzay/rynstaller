@@ -7,8 +7,8 @@
 package main
 
 import (
-	"vencord/buildinfo"
 	"image/color"
+	"vencord/buildinfo"
 )
 
 const ReleaseUrl = "https://api.github.com/repos/Rayanzay/ryncord/releases/latest"

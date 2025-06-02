@@ -19,8 +19,10 @@ import (
 var BaseDir string
 var BaseDirErr error
 var RyncordDirectory string
+var EquicordDirectory string
 
-func init() {	if dir := os.Getenv("RYNCORD_USER_DATA_DIR"); dir != "" {
+func init() {
+	if dir := os.Getenv("RYNCORD_USER_DATA_DIR"); dir != "" {
 		Log.Debug("Using RYNCORD_USER_DATA_DIR")
 		BaseDir = dir
 	} else if dir = os.Getenv("DISCORD_USER_DATA_DIR"); dir != "" {
@@ -43,7 +45,8 @@ func init() {	if dir := os.Getenv("RYNCORD_USER_DATA_DIR"); dir != "" {
 	}
 	if dir != "" {
 		Log.Debug("Using EQUICORD_DIRECTORY")
-		EquicordDirectory = dir	} else {
+		EquicordDirectory = dir
+	} else {
 		EquicordDirectory = path.Join(BaseDir, "ryncord.asar")
 	}
 }
