@@ -1,4 +1,4 @@
-module vencord
+module ryncord
 
 go 1.24
 

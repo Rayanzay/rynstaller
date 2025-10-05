@@ -1,6 +1,6 @@
-$link = "https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli.exe"
+$link = "https://github.com/Rayanzay/rynstaller/releases/latest/download/rynstallerCli.exe"
 
-$outfile = "$env:TEMP\EquilotlCli.exe"
+$outfile = "$env:TEMP\rynstallerCli.exe"
 
 Write-Output "Downloading installer to $outfile"
 
